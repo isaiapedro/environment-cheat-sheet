@@ -3,6 +3,33 @@ Environemnt Manipulation Cheat Sheets
 
 How to setup Python on Anaconda, Angular and Node libraries, Java and Docker environemnts
 
+## Github Commands
+
+Initialize an existing directory as a Git repository
+
+	git init
+Retrieve an entire repository from a hosted location via URL
+
+	git clone [url]
+
+Add all files as it looks now to your next commit (stage)
+
+	git add *
+	
+Show modified files in working directory, staged for your next commit
+
+	git status
+	
+Commit your staged content as a new commit snapshot
+	
+	git commit -m “[descriptive message]
+	
+Transmit local branch commits to the remote repository branch
+
+	git push [alias] [branch]
+
+<br>
+
 ## Conda Environments
 Create and activate enviornment:
 
