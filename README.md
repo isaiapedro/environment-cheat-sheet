@@ -89,3 +89,18 @@ To build the Docker image and
 	docker run -p 4201:4200 angular-docker
 
 To run the image.
+
+<br>
+
+Other commands:
+
+<br>
+
+(a) Creating a component:
+
+	ng generate component [name] [options]
+
+
+
+
+
