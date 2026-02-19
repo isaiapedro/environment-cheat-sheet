@@ -100,7 +100,10 @@ Other commands:
 
 	ng generate component [name] [options]
 
+(b) Install angular materials:
 
+	npm install --save @angular/material @angular/cdk
+	
 
 
 
