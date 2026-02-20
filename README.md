@@ -92,6 +92,26 @@ To run the image.
 
 <br>
 
+	docker start|stop <container_name> (or <container-id>)
+
+To start or stop container
+
+	docker rm <container_name>
+
+To remove existing container
+
+	docker rmi <image_name>
+
+To remove existing image
+
+	docker images
+
+To list docker images
+
+	docker ps --all
+
+And to list all containers (running and stoped)
+
 Other commands:
 
 <br>
