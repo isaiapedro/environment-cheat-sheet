@@ -11,6 +11,14 @@ Initialize an existing directory as a Git repository
 Retrieve an entire repository from a hosted location via URL
 
 	git clone [url]
+	
+Check current remote repository
+
+	git remote -v
+
+Change remote repository if needed
+
+	git remote set-url origin <new_url>
 
 Add all files as it looks now to your next commit (stage)
 
