@@ -20,6 +20,11 @@ Change remote repository if needed
 
 	git remote set-url origin <new_url>
 
+
+In the same vein, change current branch
+
+	git checkout <branch_name>
+
 Add all files as it looks now to your next commit (stage)
 
 	git add *
