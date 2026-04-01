@@ -43,6 +43,69 @@ Transmit local branch commits to the remote repository branch
 
 <br>
 
+## Postgresql Commands
+
+Install Postgresql, for Ubuntu and Debian:
+
+	sudo apt update
+	sudo apt install postgresql postgresql-contrib -y
+
+Start postgres and enable automatic startup:
+
+	sudo systemctl start postgresql
+	sudo systemctl enable postgresql
+	
+Log into postgres
+
+	sudo -i -u postgres
+
+Connect to database
+
+	psql -d database_name
+
+Create database inside psql
+
+```
+-- 1. Set the password for the default 'postgres' user (Make sure to use single quotes!)
+ALTER USER postgres PASSWORD 'password';
+
+-- 2. Create the database for your application
+CREATE DATABASE music_blog;
+
+-- 3. Grant the postgres user all privileges on this new database
+GRANT ALL PRIVILEGES ON DATABASE music_blog TO postgres;
+
+-- 4. Type \q and press Enter to exit the SQL prompt
+\q
+
+```
+
+Create database inside 
+
+	psql -d database_name
+
+### Database shortcuts
+
+List all tables
+
+	\dt
+
+Show DB structure
+
+	\d table_name
+	
+Clear screen
+
+	\! clear
+	
+Exit database
+	
+	\q
+	
+You can also use SQL queries inside the database prompt!
+
+<br>
+
 ## Conda Environments
 Create and activate enviornment:
 
