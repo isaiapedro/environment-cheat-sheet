@@ -70,14 +70,13 @@ Create database inside psql
 ALTER USER postgres PASSWORD 'password';
 
 -- 2. Create the database for your application
-CREATE DATABASE music_blog;
+CREATE DATABASE database_name;
 
 -- 3. Grant the postgres user all privileges on this new database
-GRANT ALL PRIVILEGES ON DATABASE music_blog TO postgres;
+GRANT ALL PRIVILEGES ON DATABASE database_name TO postgres;
 
 -- 4. Type \q and press Enter to exit the SQL prompt
 \q
-
 ```
 
 Create database inside 
