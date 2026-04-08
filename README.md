@@ -8,6 +8,14 @@ How to setup Python on Anaconda, Angular and Node libraries, Java and Docker env
 Initialize an existing directory as a Git repository
 
 	git init
+Set Local Username
+
+	git config user.name "Your Name"
+	
+Set Local Email
+
+	git config user.email "youremail@example.com"
+
 Retrieve an entire repository from a hosted location via URL
 
 	git clone [url]
