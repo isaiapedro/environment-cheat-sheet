@@ -1,7 +1,7 @@
 Environemnt Manipulation Cheat Sheets
 ===============
 
-###How to setup Python on Anaconda, Angular and Node libraries, Java and Docker environemnts
+### How to setup Python on Anaconda, Angular and Node libraries, Java and Docker environemnts
 
 ## Contents
 
