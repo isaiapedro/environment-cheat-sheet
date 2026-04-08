@@ -1,7 +1,14 @@
 Environemnt Manipulation Cheat Sheets
 ===============
 
-How to setup Python on Anaconda, Angular and Node libraries, Java and Docker environemnts
+###How to setup Python on Anaconda, Angular and Node libraries, Java and Docker environemnts
+
+## Contents
+
+- [Github Commands](#github-commands)
+- [Postgresql Commands](#postgresql-commands)
+- [Conda Environments](#conda-environments)
+- [Angular Environments](#angular-environments)
 
 ## Github Commands
 
