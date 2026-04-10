@@ -74,6 +74,10 @@ Log into postgres
 
 	sudo -i -u postgres
 
+List databases
+
+	psql -l
+	
 Connect to database
 
 	psql -d database_name
