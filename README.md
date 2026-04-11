@@ -1,10 +1,18 @@
-Environemnt Manipulation Cheat Sheets
+# Environment Manipulation Cheat Sheets 📦
 ===============
 
-### How to setup Python on Anaconda, Angular and Node libraries, Java and Docker environemnts
+### Key frameworks and technologies
+
+* Python (Anaconda)
+* Angular (Node.js, Docker)
+* Java (Docker)
+* Postgresql (Postgres)
+
+### Brief summary of the project
+
+This repository provides a collection of cheat sheets for manipulating environments in various programming languages and tools. It includes commands for setting up Python on Anaconda, Angular, Node libraries, Java, and Docker environments, as well as Postgresql.
 
 ## Contents
-
 - [Github Commands](#github-commands)
 - [Postgresql Commands](#postgresql-commands)
 - [Conda Environments](#conda-environments)
@@ -14,77 +22,107 @@ Environemnt Manipulation Cheat Sheets
 
 Initialize an existing directory as a Git repository
 
-	git init
+```bash
+git init
+```
+
 Set Local Username
 
-	git config user.name "Your Name"
-	
+```bash
+git config user.name "Your Name"
+```
+
 Set Local Email
 
-	git config user.email "youremail@example.com"
+```bash
+git config user.email "youremail@example.com"
+```
 
 Retrieve an entire repository from a hosted location via URL
 
-	git clone [url]
-	
+```bash
+git clone [url]
+```
+
 Check current remote repository
 
-	git remote -v
+```bash
+git remote -v
+```
 
 Change remote repository if needed
 
-	git remote set-url origin <new_url>
+```bash
+git remote set-url origin <new_url>
+```
 
+Change current branch
 
-In the same vein, change current branch
-
-	git checkout <branch_name>
+```bash
+git checkout <branch_name>
+```
 
 Add all files as it looks now to your next commit (stage)
 
-	git add *
-	
+```bash
+git add *
+```
+
 Show modified files in working directory, staged for your next commit
 
-	git status
-	
+```bash
+git status
+```
+
 Commit your staged content as a new commit snapshot
-	
-	git commit -m “[descriptive message]
-	
+
+```bash
+git commit -m “[descriptive message]
+```
+
 Transmit local branch commits to the remote repository branch
 
-	git push [alias] [branch]
-
-<br>
+```bash
+git push [alias] [branch]
+```
 
 ## Postgresql Commands
 
 Install Postgresql, for Ubuntu and Debian:
 
-	sudo apt update
-	sudo apt install postgresql postgresql-contrib -y
+```bash
+sudo apt update
+sudo apt install postgresql postgresql-contrib -y
+```
 
 Start postgres and enable automatic startup:
 
-	sudo systemctl start postgresql
-	sudo systemctl enable postgresql
-	
-Log into postgres
-
-	sudo -i -u postgres
-
-List databases
-
-	psql -l
-	
-Connect to database
-
-	psql -d database_name
-
-Create database inside psql
-
+```bash
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
 ```
+
+Log into postgres:
+
+```bash
+sudo -i -u postgres
+```
+
+List databases:
+
+```bash
+psql -l
+```
+
+Connect to database:
+
+```bash
+psql -d database_name
+```
+
+Create database inside psql:
+
+```sql
 -- 1. Set the password for the default 'postgres' user (Make sure to use single quotes!)
 ALTER USER postgres PASSWORD 'password';
 
@@ -100,75 +138,101 @@ GRANT ALL PRIVILEGES ON DATABASE database_name TO postgres;
 
 Create database inside 
 
-	psql -d database_name
+```bash
+psql -d database_name
+```
 
 ### Database shortcuts
 
-List all tables
+List all tables:
 
-	\dt
+```sql
+\dt
+```
 
-Show DB structure
+Show DB structure:
 
-	\d table_name
-	
-Clear screen
+```sql
+\d table_name
+```
 
-	\! clear
-	
-Exit database
-	
-	\q
-	
-You can also use SQL queries inside the database prompt!
+Clear screen:
 
-<br>
+```sql
+\! clear
+```
+
+Exit database:
+
+```sql
+\q
+```
 
 ## Conda Environments
-Create and activate enviornment:
+
+Create and activate environment:
 
 Open the Conda Prompt as administrator and run the commands
 
-	conda create -n env_name
-To create a new environemnt
+```bash
+conda create -n env_name
+```
 
-	conda activate env_name
+To create a new environment
 
-To activate the current environemnt
+```bash
+conda activate env_name
+```
 
-	conda install pip
-	
+To activate the current environment
+
+```bash
+conda install pip
+```
+
 So you can install dependencies with pip
 
-	pip install -r requirements.txt
-	
+```bash
+pip install -r requirements.txt
+```
+
 To install from the requirements.txt file, if you don't have a requirements file in your project yet, use the following line after you've installed all dependencies
-	
-	pip freeze > requirements.txt
-	
+
+```bash
+pip freeze > requirements.txt
+```
+
 Continuing with the initialization
 
-	code .
+```bash
+code .
+```
 
 To start vscode with the desired environment active and installed
 
-<br>
-
 ## Angular Environments
+
 Install dependencies:
 
 After downloading [Node.js](https://nodejs.org/en/download), run the following command on the command line
 
-	npm install -g @angular/cli
+```bash
+npm install -g @angular/cli
+```
+
 To install Angular CLI and
 
-	ng new <project-name>
+```bash
+ng new <project-name>
+```
 
 To create a new project.
 
 To run the project you have to use the command below inside the project directory
 
-	npm start
+```bash
+npm start
+```
 
 Other method to work with Angular is to use a Dockerfile,
 
@@ -176,48 +240,58 @@ To use Docker, besides downloading the Docker Desktop workbench, you'll have to 
 
 Run the following commands and create files just like the ones on the [Angular folder](https://github.com/isaiapedro/environment-cheat-sheet/tree/main/angular) in this repository branch.
 
-	docker build -t angular-docker .
+```bash
+docker build -t angular-docker .
+```
 
 To build the Docker image and
 
-	docker run -p 4201:4200 angular-docker
+```bash
+docker run -p 4201:4200 angular-docker
+```
 
 To run the image.
 
-<br>
-
-	docker start|stop <container_name> (or <container-id>)
+```bash
+docker start|stop <container_name> (or <container-id>)
+```
 
 To start or stop container
 
-	docker rm <container_name>
+```bash
+docker rm <container_name>
+```
 
 To remove existing container
 
-	docker rmi <image_name>
+```bash
+docker rmi <image_name>
+```
 
 To remove existing image
 
-	docker images
+```bash
+docker images
+```
 
 To list docker images
 
-	docker ps --all
+```bash
+docker ps --all
+```
 
-And to list all containers (running and stoped)
+And to list all containers (running and stopped)
 
 Other commands:
 
-<br>
-
 (a) Creating a component:
 
-	ng generate component [name] [options]
+```bash
+ng generate component [name] [options]
+```
 
 (b) Install angular materials:
 
-	npm install --save @angular/material @angular/cdk
-	
-
-
-
+```bash
+npm install --save @angular/material @angular/cdk
+```
