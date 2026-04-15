@@ -92,6 +92,11 @@ Delete all branches except main
 git branch | grep -v "main" | xargs git branch -D
 ```
 
+Copy content from main to new branch
+
+```bash
+git merge main
+```
 
 ## Postgresql Commands
 
