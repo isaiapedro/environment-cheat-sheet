@@ -86,6 +86,13 @@ Transmit local branch commits to the remote repository branch
 git push [alias] [branch]
 ```
 
+Delete all branches except main
+
+```bash
+git branch | grep -v "main" | xargs git branch -D
+```
+
+
 ## Postgresql Commands
 
 Install Postgresql, for Ubuntu and Debian:
