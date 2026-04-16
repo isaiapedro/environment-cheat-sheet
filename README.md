@@ -7,6 +7,7 @@
 * Angular (Node.js, Docker)
 * Java (Docker)
 * Postgresql (Postgres)
+* Amazon Web Services (Cloud)
 
 ### Brief summary of the project
 
@@ -17,6 +18,7 @@ This repository provides a collection of cheat sheets for manipulating environme
 - [Postgresql Commands](#postgresql-commands)
 - [Conda Environments](#conda-environments)
 - [Angular Environments](#angular-environments)
+- [AWS Commands](#aws-commands)
 
 ## Github Commands
 
@@ -306,4 +308,64 @@ ng generate component [name] [options]
 
 ```bash
 npm install --save @angular/material @angular/cdk
+```
+
+## AWS Commands
+
+To be able to use aws cli directly from local server, you can install the dependencies using the following command
+
+```bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+```
+
+Configure your localhost to be able to read and modify state of services
+
+```bash
+aws configure
+```
+| Prompt  | Information |
+| ------------- | ------------- |
+| AWS Access Key ID: | your access key  |
+| AWS Secret Access Key: | your secret key  |
+| Default region name: | sa-east-1 |
+| Default output format: | json  |
+
+Now if you want to create a direct connection via SSH to your webserver
+
+```bash
+ssh -i your-key.pem ec2-user@<NEW_IP>
+```
+
+Check if EC2 is running
+
+```bash
+aws ec2 describe-instances \
+  --region sa-east-1 \
+  --query "Reservations[].Instances[].{ID:InstanceId,State:State.Name,IP:PublicIpAddress}" \
+  --output table
+```
+Check if RDS is running
+
+```bash
+aws rds describe-db-instances \
+  --region sa-east-1 \
+  --query "DBInstances[].{ID:DBInstanceIdentifier,Status:DBInstanceStatus}" \
+  --output table
+```
+
+Run EC2
+
+```bash
+aws ec2 start-instances --instance-ids i-xxxxxxxxxxxxxxxxx --region sa-east-1
+```
+
+Run RDS
+
+```bash
+aws rds start-db-instance \
+  --db-instance-identifier music-blog \
+  --region sa-east-1
 ```
