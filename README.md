@@ -339,6 +339,22 @@ Now if you want to create a direct connection via SSH to your webserver
 ssh -i your-key.pem ec2-user@<NEW_IP>
 ```
 
+Find RDS id
+
+```bash
+aws rds describe-db-instances \
+  --query "DBInstances[*].[DBInstanceIdentifier,DBInstanceStatus]" \
+  --output table
+```
+
+Find EC2 id
+
+```bash
+aws ec2 describe-instances \
+  --query "Reservations[*].Instances[*].[InstanceId,State.Name,Tags[?Key=='Name'].Value]" \
+  --output table
+```
+
 Check if EC2 is running
 
 ```bash
@@ -354,6 +370,15 @@ aws rds describe-db-instances \
   --region sa-east-1 \
   --query "DBInstances[].{ID:DBInstanceIdentifier,Status:DBInstanceStatus}" \
   --output table
+```
+
+Find Public IPv4 address
+
+```bash
+aws ec2 describe-instances \
+  --instance-ids <your-instance-id> \
+  --query "Reservations[*].Instances[*].PublicIpAddress" \
+  --output text
 ```
 
 Run EC2
